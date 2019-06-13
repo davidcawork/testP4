@@ -1,7 +1,7 @@
 # Tutorial de P4
 
 
-Hemos seguido el tutorial que la organización p4 tiene en su github. Hemos tenido que crear nuestro propio scritp de instalación ```install.sh```. Habrá que darle permisos de ejecución. 
+Hemos seguido el tutorial que la organización p4 tiene en su github. Además, tenido que crear nuestro propio script de instalación ```install.sh```. Habrá que darle permisos de ejecución ```chmod 777 install.sh``` y lanzarlo con ```sudo```. 
 
 La necesidad de crear otró metodo de instalación es la deficiencia del los metedos alternativos de instalación que tienen aparte de Vagrant. Ellos disponen de dos shellscripts, donde crean un enviroment muy cercano a personas con poco conocimiento de Linux, facilitandoles user propio p4, generar iconos en el escritorio, configurar IDEs... Tareas propias de cada de desarollador en función de sus preferencias. 
 
