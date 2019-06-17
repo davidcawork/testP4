@@ -216,5 +216,6 @@ function all {
 all
 
 # Do this last!
+rm ltmain.sh
 sudo reboot
 
