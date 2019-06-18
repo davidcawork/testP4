@@ -19,4 +19,8 @@ Ofrecer el nuevo método de instalación vía Pull-Request. Estudio del estado d
 "Implementación de un switch ARP-Path basado en el lenguaje P4 con capacidades para seguridad perimetral". 
 Realización del test 1 "basic" del tutorial de P4. 
 
+- Día 4 <18/06>: Leer papers sobre p4, seguir estudiando el estado del arte del TFM 
+"Implementación de un switch ARP-Path basado en el lenguaje P4 con capacidades para seguridad perimetral". 
+Desarrollar los requerimientos adicionales expuestos en el pull-request por un intengrante del equipo p4.
+
 ```
