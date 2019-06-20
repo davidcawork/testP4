@@ -23,4 +23,7 @@ Realización del test 1 "basic" del tutorial de P4.
 "Implementación de un switch ARP-Path basado en el lenguaje P4 con capacidades para seguridad perimetral". 
 Desarrollar los requerimientos adicionales expuestos en el pull-request por un intengrante del equipo p4.
 
+- Día 5 <19/06>: Estudio de Vagrant, gRPC y Protobuf. Documentación en LaTeX de los prgresos sobre p4 
+y los conocimientos adquiridos.
+
 ```
