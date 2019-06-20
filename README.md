@@ -26,4 +26,8 @@ Desarrollar los requerimientos adicionales expuestos en el pull-request por un i
 - Día 5 <19/06>: Estudio de Vagrant, gRPC y Protobuf. Documentación en LaTeX de los prgresos sobre p4 
 y los conocimientos adquiridos.
 
+- Día 6 <20/06>: Completar el desarrollo del nuevo metodo de instalación para cumplir con los requerimientos 
+del mantenedor del repositorio de p4lang/tutorials. Estudio del potencial que tiene p4 en los dispositivos 
+frontera SDN - IoT.
+
 ```
