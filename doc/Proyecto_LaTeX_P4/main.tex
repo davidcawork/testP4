@@ -1,0 +1,55 @@
+\documentclass{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{vmargin}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{minted}
+\usepackage{booktabs}
+\usepackage{floatrow}
+\usepackage{url}
+\usepackage{appendix}
+\newcommand{\shellcmd}[1]{\\\indent\indent\texttt{\footnotesize\# #1}\\}
+\renewcommand{\appendixname}{Anexos}
+\renewcommand{\appendixtocname}{Anexos}
+\renewcommand{\appendixpagename}{Anexos}
+\usepackage{hyperref}
+\usepackage{cite}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\title{Memoria P4}
+\author{David Carrascal Acebrón}
+\date{Junio del 2019}
+\setmargins{2.5cm}       
+{1.5cm}                       
+{16.5cm}                    
+{23.42cm}            
+{10pt}                 
+{1cm}                           
+{0pt}
+{2cm} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    Init    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+\tableofcontents{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    Main    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{body.tex}
+ 
+ 
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%  Referencias  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{plain}
+\bibliography{p4report}{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   Anexos    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{anexos.tex}
+\end{document}

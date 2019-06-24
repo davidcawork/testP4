@@ -1,0 +1,68 @@
+\chapter{Lenguaje P4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Info útil  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Enlaces útiles}
+\begin{itemize}
+    \item Tutoriales: \url{https://github.com/p4lang/tutorials/}
+    \item Protobuf: \url{https://developers.google.com/protocol-buffers/}
+    \item gRPC: \url{https://grpc.io/}
+    \item gRPC ejemplo: \url{https://www.nocountryforgeeks.com/grpc-protocol-buffers/}
+    \item Lista de reproducción sobre conferencias: \newline 
+    \url{https://www.youtube.com/playlist?list=PLRffjASqEa5VMsUml2V34_xDTeVydeM_L}
+    \item Correo explicando BM2: \url{http://lists.p4.org/pipermail/p4-dev_lists.p4.org/2016-June/002112.html}
+    
+\end{itemize}
+\section{Papers de interés}
+\begin{itemize}
+    \item Paper sobre la agregación de tecnología p4 para parsear paquetes generados por sensores IoT a una WAN \cite{p4_iot-paper}.
+    \item Paper sobre como emplear Switches p4 frontera para servicios de IoT \cite{8470257}
+    \item Paper sobre el gran potencial que tiene p4 para interconectar el mundo SDN con la próxima generación de nodos finales que interactúan con clusters de TI innovadores, 5G fronthaul e internet de las cosas. \cite{8651200}
+    
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Intro Teórica %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{intro_teorica.tex}{}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Instalación %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Instalación}
+\begin{itemize}
+    \item Hemos instalado una máquina virtual de Ubuntu 16.04, con 20GB de almacenamiento ya que con 10 se nos queda corto. 4 GiB de ram y cuatro núcleos
+    
+    \item Hemos hecho un update y upgrade, e instalado git, vim, htop, openssh-server para conectarse vía ssh en remoto.
+    
+    \item Hemos hecho un git clone del repositorio con el tutorial:
+    \url{https://github.com/p4lang/tutorials}
+    
+    \item Lanzamos los dos shell-scripts user-bootstrap.sh y root-bootstrap.sh. 
+    \item Hemos encontrado varios problemas en el momento de llevar a cabo la instalación. Por lo que se ha decidido modificar los shells-scripts de instalación ofrecidos en el repositorio.
+\end{itemize}
+
+Como se ha introducido antes, hemos tenido que crear nuestro propio script de instalación \textbf{install.sh}. Habrá que darle permisos de ejecución \textbf{chmod 777 install.sh} y lanzarlo con \textbf{sudo}. \newline
+\newline
+
+La necesidad de crear otro método de instalación es la deficiencia del los métodos alternativos de instalación que tienen aparte de Vagrant. Ellos disponen de dos shell-scripts, donde crean un enviroment muy cercano a personas con poco conocimiento de Linux, facilitándoles user propio p4, generar iconos en el escritorio, configurar IDEs... Tareas propias de cada de desarrollador en función de sus preferencias. \newline
+\newline
+
+Por lo que se ha decidido limpiar el proceso de instalación, dejando únicamente lo estrictamente necesario para llevar a cabo el tutorial de p4. Dejando únicamente un shell-script, más optimizado y  más limpio. Se ha tenido que hacer una doble llamada al shell-script \textbf{autogen.sh} debido a este issue:  
+\begin{itemize}
+    \item \url{https://github.com/protocolbuffers/protobuf/issues/149} 
+\end{itemize}
+Como forma de agradecer a la organización de p4 el hecho de que tengan un buen repositorio de tutoriales dando un buen entrypoint para los noobies que acaban de empezar con p4 (Yo) se ha ofrecido el script de instalación para que se incorpore al master.\newline
+\newline
+Al hacer el pull-request, el mantenedor de los tutoriales le pareció una buena idea, pero el hecho de tener un método de instalación nuevo significa más trabajo para mantener el repositorio. Me pidió que tratara de incluir la instalación nativa de Vagrant para que así con un único script podamos tener la instalación sobre Vagrant y el método que habíamos propuesto. Para poder llevar esta tarea a cabo se tuvo que estudiar la herramienta de Vagrant. En los anexos se han puesto unas pinceladas de los aspectos más significativos de esta herramienta. \newline
+\newline
+De momento no está incluido en el master pero se puede hacer de uso del nuevo método de instalación el fork creado de los tutoriales de p4.
+\begin{itemize}
+    \item \url{https://github.com/davidcawork/testP4/tree/master/tutorial}
+\end{itemize}
+Se puede consultar el estado del pull-request aquí.
+\begin{itemize}
+    \item \url{https://github.com/p4lang/tutorials/pull/261}
+\end{itemize}
+
+Para llevar a cabo la instalación del modo nativo sobre Vagrant se debe instalar Vagrant, instalar un proveedor de maquinas virtuales y cargar el VagrantFile. Para más información sobre el uso de Vagrant consulte la información referente a ello en los anexos.
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Tutoriales %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{tuto_p4.tex}
+
+

@@ -1,0 +1,64 @@
+\appendix
+\clearpage
+\addappheadtotoc
+\appendixpage
+\chapter{Vagrant}
+\begin{figure}[!htb]
+  \centering
+    \includegraphics[width=0.3\linewidth]{./img/anexos/1.png}
+    \caption{Logo de Vagrant.}
+  \label{fig:yo}
+\end{figure}
+\section{¿Qué es?}
+Vagrant es una herramienta que nos ayuda a crear y manejar máquinas virtuales con un mismo entorno de trabajo. Nos permite definir los servicios a instalar así como también sus configuraciones. Está pensado para trabajar en entornos locales y lo podemos utilizar con shell-scripts, Chef, Puppet o Ansible como métodos de provisión de los recursos necesarios en la máquina virtual a desplegar.\newline
+\newline
+Cabe destacar que vagrant no tiene la capacidad para correr una maquina virtual por si mismo, sino que simplemente se encarga de las características con las que debe crearse esa maquina virtual y los complementos a instalar en ella o recursos de aprovisionamiento. Para poder trabajar con las máquinas virtuales es necesario que también tengamos un proveedor de maquinas virtuales, como pueden ser  VirtualBox , WMware.
+
+\section{Instalación}
+
+En mi caso hice uso de Vagrant sobre Windows por lo que el método de instalación era descargar un gestor de instalación de ventanas y seguir los pasos establecidos.
+
+\begin{itemize}
+    \item \url{https://www.vagrantup.com/downloads.html}
+\end{itemize}
+Podemos comprobar que la instalación se ha concluido satisfactoriamente haciendo uso de la shell o de la powershell. Escribimos vagrant -v debería mostrarnos la versión de vagrant actual que tenemos montada.\newline
+\newline
+Una vez instalado Vagrant y predispuesto el fichero Vagrantfile únicamente debemos abrir la shell, powershell en Windows. Ir al directorio en cuestión donde tenemos el fichero VagrantFile y hacer \textbf{vagrant up}. Este proceso puede tardar más o menos en función de si lo hacemos la primera vez o ya hemos hecho uso de la \textit{box} con la que se va montar la máquina virtual.
+
+\section{¿Para que sirve?}
+
+Como hemos venido mencionado vagrant sirve para ayudarnos a crear y configurar máquinas virtuales con determinadas características y componentes. La gran ventaja de vagrant es que posee un archivo de configuración \textbf{Vagrantfile} donde se centraliza toda la configuración de la VM que creamos además de añadir los métodos de aprovisionamiento de la maquina virtual.\newline
+\newline
+Esto lo puede hacer vía shell-scripts que carga en la maquina virtual a gestionar o con la API que tienen establecida dándonos la posibilidad de describir en el mismo Vagrantfile los scripts deseados. El punto positivo de Vagrant es el hecho de que se puede compartir de una forma relativamente sencilla una maquina virtual con una serie de configuraciones y recursos montados. Esto se puede hacer únicamente compartiendo el archivo de VagrantFile.
+
+\section{¿Cómo funciona?}
+Antes introdujimos el término de \textit{Box}. Vagrant cuando lee el fichero de VagrantFile lee la imagen sobre la que se va a construir la máquina virtual. Esta imagen por así llamarla, es una imagen de un SO con ciertas configuraciones ya predispuestas. Esto ahorrará tiempo en el momento de hacer el boot de la misma. Aquí puede encontrar numerosas Boxes creadas por los usuarios o por propias empresas mantenedoras de ciertos SO's.
+\begin{itemize}
+    \item \url{https://app.vagrantup.com/boxes/search}
+\end{itemize}
+\begin{figure}[!htb]
+  \centering
+    \includegraphics[width=0.7\linewidth]{./img/anexos/2.JPG}
+    \caption{Repositorio de Boxes.}
+  \label{fig:yo}
+\end{figure}
+
+\section{Comandos útiles}
+\begin{minted}{shell}[]
+# Arrancar una maquina virtual /  Parar una maquina virtual
+vagrant up / vagrant halt
+# Conectarse vía ssh
+vagrant ssh
+# Listar maquinas creadas
+vagrant global-status
+# Eliminar maquina 
+vagrant destroy [id]
+\end{minted}
+
+
+
+
+
+
+
+
