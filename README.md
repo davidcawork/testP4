@@ -30,4 +30,8 @@ y los conocimientos adquiridos.
 del mantenedor del repositorio de p4lang/tutorials. Estudio del potencial que tiene p4 en los dispositivos 
 frontera SDN - IoT.
 
+- Día 7 <21/06>: Escribir pull-request y hacer push de todos los elementos completados, pendiendte de aprobación
+por parte del equipo de p4lang. Lectura de papers donde incorporan tecnología p4 para funciones de traducción y 
+problemas de alcanzabilidad en redes 802.15.4.
+
 ```
