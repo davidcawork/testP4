@@ -5,6 +5,13 @@
 
 ----
 
+### Como replicar test realizados
+
+- Primero se tiene que instalar todas las dependencias necesarias para correr las pruebas. 
+	* ```cd ./testP4/tutorial_p4/vm/``` y lance el script de instalación(Quick method) ```sudo ./install -q```.
+- Entre en cada subdir. y ejecute ```sudo make run```.
+
+----
 ### Historial
 
 ``` 
