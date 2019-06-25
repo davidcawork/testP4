@@ -34,4 +34,7 @@ frontera SDN - IoT.
 por parte del equipo de p4lang. Lectura de papers donde incorporan tecnología p4 para funciones de traducción y 
 problemas de alcanzabilidad en redes 802.15.4.
 
+- Día 8 <24/06>: Documentación del test de forwarding básico, organización del repositorio y completar memoria
+hasta la fecha.
+
 ```
