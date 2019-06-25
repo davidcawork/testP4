@@ -44,4 +44,8 @@ problemas de alcanzabilidad en redes 802.15.4.
 - Día 8 <24/06>: Documentación del test de forwarding básico, organización del repositorio y completar memoria
 hasta la fecha.
 
+- Día 9 <25/06>: Realización de test sobre tunelado con p4. Documentación del test en el proyecto de LaTeX.
+Depuración del código de dicho test visto las incosistencias de los resultados del mismo. (Issue: https://github.com/p4lang/tutorials/issues/263). 
+
+
 ```
