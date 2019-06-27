@@ -41,6 +41,7 @@ function requirements {
     		echo "$(p4c-graphs --version)"
 	else
     		echo "p4c-graphs not found"
+		exit
 	fi
 }
 
