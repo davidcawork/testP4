@@ -13,7 +13,7 @@
 # Usage: 
 #                       ./auto_graphs.sh <p4_program>.p4
 #
-# Note: It will create in your pwd the output directory
+# Note: It will create in your cwd the output directory
 # 
 
 
