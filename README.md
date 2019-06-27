@@ -48,5 +48,8 @@ hasta la fecha.
 Depuración del código de dicho test visto las incosistencias de los resultados del mismo. 
 (Issue: https://github.com/p4lang/tutorials/issues/263). 
 
+- Día 10 <26/06>: Realización de test sobre "switches" con capacidades de un tunelado avanzado. Realización de 
+test sobre P4RUNTIME. Entender como funciona gRPC para instanciar reglas en las tablas de los "switches". 
+
 
 ```
