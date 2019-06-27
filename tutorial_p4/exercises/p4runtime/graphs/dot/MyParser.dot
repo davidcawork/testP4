@@ -1,0 +1,15 @@
+digraph MyParser{
+start [shape=rectangle,label="start
+(hdr.ethernet.etherType)"]
+parse_myTunnel [shape=rectangle,label="parse_myTunnel
+(hdr.myTunnel.proto_id)"]
+parse_ipv4 [shape=rectangle,label="parse_ipv4"]
+accept [shape=rectangle,label="accept"]
+reject [shape=rectangle,label="reject"]
+start -> parse_myTunnel [label="16w0x1212"]
+start -> parse_ipv4 [label="16w0x800"]
+start -> accept [label="default"]
+parse_myTunnel -> parse_ipv4 [label="16w0x800"]
+parse_myTunnel -> accept [label="default"]
+parse_ipv4 -> accept [label="always"]
+}
