@@ -11,45 +11,60 @@
 	* ```cd ./testP4/tutorial_p4/vm/``` y lance el script de instalación(Quick method) ```sudo ./install -q```.
 - Entre en cada subdir. y ejecute ```sudo make run```.
 
+### Como instalar p4c-graphs
+
+Por defecto al intalar p4c se debería instalar esta feature del compilador, pero al tratarse de una instalación rápida 
+para realizar los tutoriales, las dependencias de esta feature no están instaladas ya que no se va hacer uso de esta.
+
+- Lo primero que vamos hacer es instalar las dependencias necesarias para poder llevar a cabo la instalación de p4c-graphs
+	* sudo apt-get install libboost-graph-dev
+- Una vez las dependencias están instaladas, el proceso automatico de build de p4c al volverlo a lanzar debería hacer un build de p4c-graphs.
+	* ```cd ./testP4/tutorial_p4/vm/p4c/build/``` 
+	* Preconfiguramos el build: ```sudo cmake ..```
+	* Se puede acelerar el proceso de compilación, indicando número de cores que dispongamos en la máquina: 
+	```sudo make -j{NUM_CORES}```
+	* Para tener un acceso global a herramienta solo quedaría: ```sudo make install``` 
+	* Creará softlinks a los ejecutables, en la ruta ```/usr/local/bin``` que está en path, para ser accesible por todos.
+
 ----
 ### Historial
 
 ``` 
-- Día 1 <12/06>: Leer información sobre p4, ver videotutoriales explicativos sobre p4. Enterder que es p4, su motivación 
+Día 1 <12/06>: Leer información sobre p4, ver video tutoriales explicativos sobre p4. Entender que es p4, su motivación
 y sus ventajas de la programación del plano de datos en los nodos de la topología de procesamiento.
 
 - Día 2 <13/06>: Creación de VM donde se van a llevar a cabo los test de P4(Ubuntu 16.04).
-Depurar proceso de instalación ofrecido alternativo a Vagrant. Creación de proceso de instalación propio /tutorial/install.sh 
+Depurar proceso de instalación ofrecido alternativo a Vagrant. Creación de proceso de instalación propio /tutorial/install.sh
 
-- Día 3 <17/06>: Depurar nuevo proceso de instalación, arreglar Highlighting de los archivos p4 en vim. 
-Ofrecer el nuevo método de instalación vía Pull-Request. Estudio del estado del arte del TFM 
-"Implementación de un switch ARP-Path basado en el lenguaje P4 con capacidades para seguridad perimetral". 
-Realización del test 1 "basic" del tutorial de P4. 
+- Día 3 <17/06>: Depurar nuevo proceso de instalación, arreglar Highlighting de los archivos p4 en vim.
+Ofrecer el nuevo método de instalación vía Pull-Request. Estudio del estado del arte del TFM
+"Implementación de un switch ARP-Path basado en el lenguaje P4 con capacidades para seguridad perimetral".
+Realización del test 1 "basic" del tutorial de P4.
 
-- Día 4 <18/06>: Leer papers sobre p4, seguir estudiando el estado del arte del TFM 
-"Implementación de un switch ARP-Path basado en el lenguaje P4 con capacidades para seguridad perimetral". 
-Desarrollar los requerimientos adicionales expuestos en el pull-request por un intengrante del equipo p4.
+- Día 4 <18/06>: Leer papers sobre p4, seguir estudiando el estado del arte del TFM
+"Implementación de un switch ARP-Path basado en el lenguaje P4 con capacidades para seguridad perimetral".
+Desarrollar los requerimientos adicionales expuestos en el pull-request por un integrante del equipo p4.
 
-- Día 5 <19/06>: Estudio de Vagrant, gRPC y Protobuf. Documentación en LaTeX de los prgresos sobre p4 
+- Día 5 <19/06>: Estudio de Vagrant, gRPC y Protobuf. Documentación en LaTeX de los progresos sobre p4
 y los conocimientos adquiridos.
 
-- Día 6 <20/06>: Completar el desarrollo del nuevo metodo de instalación para cumplir con los requerimientos 
-del mantenedor del repositorio de p4lang/tutorials. Estudio del potencial que tiene p4 en los dispositivos 
+- Día 6 <20/06>: Completar el desarrollo del nuevo método de instalación para cumplir con los requerimientos
+del mantenedor del repositorio de p4lang/tutorials. Estudio del potencial que tiene p4 en los dispositivos
 frontera SDN - IoT.
 
-- Día 7 <21/06>: Escribir pull-request y hacer push de todos los elementos completados, pendiendte de aprobación
-por parte del equipo de p4lang. Lectura de papers donde incorporan tecnología p4 para funciones de traducción y 
+- Día 7 <21/06>: Escribir pull-request y hacer push de todos los elementos completados, pendiente de aprobación
+por parte del equipo de p4lang. Lectura de papers donde incorporan tecnología p4 para funciones de traducción y
 problemas de alcanzabilidad en redes 802.15.4.
 
 - Día 8 <24/06>: Documentación del test de forwarding básico, organización del repositorio y completar memoria
 hasta la fecha.
 
 - Día 9 <25/06>: Realización de test sobre tunelado con p4. Documentación del test en el proyecto de LaTeX.
-Depuración del código de dicho test visto las incosistencias de los resultados del mismo. 
-(Issue: https://github.com/p4lang/tutorials/issues/263). 
+Depuración del código de dicho test visto las inconsistencias de los resultados del mismo.
+(Issue: https://github.com/p4lang/tutorials/issues/263).
 
-- Día 10 <26/06>: Realización de test sobre "switches" con capacidades de un tunelado avanzado. Realización de 
-test sobre P4RUNTIME. Entender como funciona gRPC para instanciar reglas en las tablas de los "switches". 
+- Día 10 <26/06>: Realización de test sobre "switches" con capacidades de un tunelado avanzado. Realización de
+test sobre P4RUNTIME. Entender como funciona gRPC para instanciar reglas en las tablas de los "switches".
 
 
 ```
