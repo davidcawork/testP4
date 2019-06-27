@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# David Carrascal<david.carrascal@edu.uah.es>, GIST, University of Alcala, Spain.
+#
 # This tool was made to automate the creation of graphs of the p4c-graphs compiler.
 #  
 #
@@ -8,8 +10,12 @@
 #			- libboost-graph-dev
 #			- graphviz
 #
+# Usage: 
+#                       ./auto_graphs.sh <p4_program>.p4
 #
-# David Carrascal, GIST, University of Alcala, Spain.
+# Note: It will create in your pwd the output directory
+# 
+
 
 requirements='libboost-graph-dev graphviz'
 P4_PROG=$1
