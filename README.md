@@ -66,5 +66,9 @@ Depuración del código de dicho test visto las inconsistencias de los resultado
 - Día 10 <26/06>: Realización de test sobre "switches" con capacidades de un tunelado avanzado. Realización de
 test sobre P4RUNTIME. Entender como funciona gRPC para instanciar reglas en las tablas de los "switches".
 
+- Día 11 <27/06>: Documentación en Overleaf de los test realizados los días anteiores. Arreglar feature del 
+compilador p4c para generar grafos desde programas en p4. Realizar herramienta auto_graph.sh que automatiza
+todo el proceso de generación de grafos y parseo de imagenes desde *.dot a *.png. Agregar grafos a todos los
+test hechos con anterioridad y documentar como instalar, y usar pc4-graphs.
 
 ```
