@@ -13,12 +13,12 @@
 
 ### Como instalar p4c-graphs
 
-Por defecto al intalar p4c se debería instalar esta feature del compilador, pero al tratarse de una instalación rápida 
+Por defecto al instalar p4c se debería instalar esta feature del compilador, pero al tratarse de una instalación rápida 
 para realizar los tutoriales, las dependencias de esta feature no están instaladas ya que no se va hacer uso de esta.
 
 - Lo primero que vamos hacer es instalar las dependencias necesarias para poder llevar a cabo la instalación de p4c-graphs
 	* sudo apt-get install libboost-graph-dev
-- Una vez las dependencias están instaladas, el proceso automatico de build de p4c al volverlo a lanzar debería hacer un build de p4c-graphs.
+- Una vez las dependencias están instaladas, el proceso automático de build de p4c al volverlo a lanzar debería hacer un build de p4c-graphs.
 	* ```cd ./testP4/tutorial_p4/vm/p4c/build/``` 
 	* Preconfiguramos el build: ```sudo cmake ..```
 	* Se puede acelerar el proceso de compilación, indicando número de cores que dispongamos en la máquina: 
