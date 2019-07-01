@@ -54,9 +54,73 @@ vagrant global-status
 # Eliminar maquina 
 vagrant destroy [id]
 \end{minted}
+\newpage
+\chapter{Generar grafos desde programas p4}
+\label{chap:como generar grafos desde programas p4}
+\section{p4c-graphs}
+Muchas veces, cuando se está programando en p4 se nos escapa el flujo de trabajo que seguirá nuestro switch. P4 al tener unas características de diseño tan modulares, permite tras un análisis sintáctico generar un diagrama de bloques ó una representación simbólica de los elementos constituidos del switch mediante un esquema gráfico. Esta \textit{feature} es un \textit{backend} del compilador \textit{p4c}, que por defecto se instala a la hora de hacer un build del compilador (Siempre y cuando las dependencias para este estén instaladas previamente).\newline
+\newline
+Si se tiene instalado p4c, pero no encuentra p4c-graphs, siga estos pasos:
+\begin{itemize}
+    \item Lo primero que vamos hacer es instalar las dependencias necesarias para poder llevar a cabo la instalación de p4c-graphs.
+        \begin{itemize}
+            \item \textbf{sudo apt-get install libboost-graph-dev}
+        \end{itemize}
+    \item Una vez las dependencias están instaladas, el proceso automático de build de p4c al volverlo a lanzar debería hacer un build de p4c-graphs.
+        \begin{itemize}
+            \item \textbf{cd ./testP4/tutorial\_p4/vm/p4c/build/}
+            \item Preconfiguramos el build: \textbf{sudo cmake ..}
+            \item Se puede acelerar el proceso de compilación, indicando número de cores que dispongamos en la máquina: \textbf{sudo make -jNUM\_CORES}
+            \item Para tener un acceso global a herramienta solo quedaría: \textbf{sudo make install}.
+            \item Creará softlinks, enlaces simbólicos, a los ejecutables, en la ruta \textbf{/usr/local/bin} que está en path, para ser accesible por todos.
+        \end{itemize}
+\end{itemize}
+\section{Herramienta auto\_graph.sh}
+Normalmente trabajar con p4c-graphs se hace pesado ya que nos crea muchos ficheros *.dot que debemos parsear a formato png para poder ver la figuras gráficamente. \newline
+\newline
+Por esto, se ha creado una herramienta que automatiza todo el proceso. Se llama auto\_graph.sh, es un shellscript que te creará un directorio llamado graph, donde podrás encontrar todos los grafos en formato png de tu programa p4. Adicionalmente, te creará un subdirectorio llamado dot, donde te almacenará también todos los ficheros *.dot generados por p4c-graphs.
+\begin{itemize}
+    \item Donde encontrarla: \url{https://github.com/davidcawork/testP4/blob/master/tools/auto_graph.sh}
+    \item Uso: \textbf{./auto\_graph.sh [programa p4]}
+\end{itemize}
+\newpage
+\section{Ejemplo}
 
+\begin{minted}{c}
+parser MyParser(packet_in packet, out headers hdr, inout metadata meta, 
+                inout standard_metadata_t standard_metadata) {
+    state start {
+        transition parse_ethernet;
+    }
 
-
+    state parse_ethernet { 
+        packet.extract(hdr.ethernet);
+        transition select(hdr.ethernet.etherType) {
+            TYPE_IPV4 : parse_ipv4;
+	    TYPE_MYTUNNEL : parse_mytunnel;
+            default : accept;
+        }
+    }
+    
+    state parse_mytunnel {
+	    packet.extract(hdr.myTunnel);
+	    transition select (hdr.ethernet.etherType) {
+		    TYPE_IPV4 : parse_ipv4;
+		    default : accept;
+	    }
+    }
+    state parse_ipv4 {
+        packet.extract(hdr.ipv4);
+        transition accept;
+    }
+}
+\end{minted}
+\begin{figure}[!htb]
+  \centering
+    \includegraphics[width=0.6\linewidth]{./img/test/17.png}
+    \caption{Bloque funcional MyParser}
+  \label{fig:yo}
+\end{figure}
 
 
 
