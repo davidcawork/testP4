@@ -71,4 +71,7 @@ compilador p4c para generar grafos desde programas en p4. Realizar herramienta a
 todo el proceso de generación de grafos y parseo de imagenes desde *.dot a *.png. Agregar grafos a todos los
 test hechos con anterioridad y documentar como instalar, y usar pc4-graphs.
 
+- Día 121 <28/06>: Estudio de P4Runtime y documentación de os progresos y conocimientos adquiridos en 
+OverLeaf.
+
 ```
