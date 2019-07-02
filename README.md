@@ -2,6 +2,7 @@
 
 - [Official site p4](https://p4.org/)
 - [P4 tutorials](https://github.com/p4lang/tutorials)
+- [Guia Definitiva P4 (adv)](https://github.com/jafingerhut/p4-guide)
 
 ----
 
