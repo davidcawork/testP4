@@ -1,0 +1,14 @@
+digraph MyParser{
+start [shape=rectangle,label="start
+(hdr.ethernet.etherType)"]
+parse_srcRouting [shape=rectangle,label="parse_srcRouting
+(hdr.srcRoutes.last.bos)"]
+parse_ipv4 [shape=rectangle,label="parse_ipv4"]
+accept [shape=rectangle,label="accept"]
+reject [shape=rectangle,label="reject"]
+start -> parse_srcRouting [label="16w0x1234"]
+start -> accept [label="default"]
+parse_srcRouting -> parse_ipv4 [label="1w1"]
+parse_srcRouting -> parse_srcRouting [label="default"]
+parse_ipv4 -> accept [label="always"]
+}
