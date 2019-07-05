@@ -2,6 +2,7 @@
 
 - [Official site p4](https://p4.org/)
 - [P4 tutorials](https://github.com/p4lang/tutorials)
+- [Guia Definitiva P4 (adv)](https://github.com/jafingerhut/p4-guide)
 
 ----
 
@@ -73,5 +74,12 @@ test hechos con anterioridad y documentar como instalar, y usar pc4-graphs.
 
 - Día 12 <28/06>: Estudio de P4Runtime y documentación de os progresos y conocimientos adquiridos en 
 OverLeaf.
+
+- Día 13 <01/07>: Realización del test de MRI (Multi hop Route Inspection), con capcidad de telemetría in-band.
+Documentación extra sobre P4Runtime en OverLeaf. Estudio y analisis de los Makefiles que utilizán para la
+construcción de los escenarios de testing.
+
+- Día 14 <02/07>: Documentación del test MRI (Multi hop Route Inspection) en OverLeaf. Realización del test
+de Source Routing. Estudio y análisis del test realizado.
 
 ```
